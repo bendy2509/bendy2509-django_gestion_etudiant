@@ -1,0 +1,64 @@
+{% extends "student/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h4 class="text-center">Ajouter un étudiant</h4>
+            </div>
+            <div class="card-body">
+                <!-- Formulaire pour ajouter un étudiant -->
+                <form action="" method="POST">
+                    {% csrf_token %}  <!-- Protection CSRF -->
+
+                    {{ form.as_p }}  <!-- Affichage du formulaire avec les champs en paragraphes -->
+
+                    <input type="submit" class="btn btn-success" value="Ajouter">  <!-- Bouton de soumission du formulaire -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7 offset-1">
+        <h4 class="text-center alert alert-info">Les étudiants de la base</h4>
+        {% if student %}
+        <!-- Table pour afficher les informations des étudiants -->
+        <table class="table table-bordered border-info align-middle">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mot de passe</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for stud in student %}
+            <tr>
+                <th scope="row">{{ stud.id }} </th>
+                <td> {{ stud.name }} </td>
+                <td> {{ stud.email }} </td>
+                <td>{{ stud.password }}</td>
+                <td>
+                    <!-- Lien pour modifier les informations de l'étudiant -->
+                    <a href="{% url 'updatedata' stud.id %}" class="btn btn-warning btn-sm btn-outline-dark">Modifier</a>
+
+                    <!-- Formulaire pour supprimer l'étudiant -->
+                    <form action="{% url 'deletedata' stud.id %}" method="post" class="d-inline">
+                        {% csrf_token %}  <!-- Protection CSRF -->
+                        <input type="submit" class="btn btn-danger btn-sm btn-outline-dark" value="Supprimer">  <!-- Bouton de soumission pour la suppression -->
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <!-- Message affiché s'il n'y a pas d'étudiants dans la base de données -->
+          <h4 class="text-center alert alert-warning">Pas d'informations dans la base de données</h4>
+        {% endif %}
+        
+    </div>
+</div>
+{% endblock content %}

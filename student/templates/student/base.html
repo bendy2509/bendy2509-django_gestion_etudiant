@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'student/css/bootstrap.css' %}">
+    <title>Student Management</title>
+</head>
+<body>
+     <div class="container mt-5">
+        <h2 class="text-center alert alert-primary" role="alert">Gestion des Étudiants du CHC-L</h2>
+        {% block content %} {% endblock content %}
+     </div>
+
+
+
+
+
+    <script src="{% static 'student/js/bootstrap.js' %}"></script>
+    <script src="{% static 'student/js/popper.js' %}"></script>
+    <script src="{% static 'student/js/jquery.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "student/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 offset-2 justify-content-center">
+        <!-- En-tête de la page indiquant que l'on modifie les informations de l'étudiant -->
+        <h4 class="alert alert-info">Modification des infos de l'étudiant numéro {{ id }}</h4>
+        
+        <!-- Formulaire pour modifier les informations de l'étudiant -->
+        <form action="" method="post">
+            {% csrf_token %}  <!-- Protection CSRF pour éviter les attaques -->
+            
+            <!-- Affichage du formulaire en utilisant des paragraphes pour chaque champ -->
+            {{ form.as_p }}
+
+            <!-- Bouton pour soumettre le formulaire après modification -->
+            <input type="submit" class="btn btn-success" value="Modifier">
+
+            <!-- Lien pour revenir à la page précédente sans soumettre le formulaire -->
+            <a href="{% url 'addAndShow' %}" class="btn btn-info">Revenir en arrière</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
