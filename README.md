@@ -1,4 +1,4 @@
-# Django Student Management System
+# Django Student Management System CHC-L
 
 Un système de gestion des étudiants du CHC-L construit avec Django. Ce projet fournit une interface utilisateur simple pour ajouter, afficher, mettre à jour et supprimer des informations sur les étudiants.
 
