@@ -1,25 +1,95 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="{% static 'student/css/bootstrap.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'student/css/bootstrap.css' %}" />
     <title>Student Management</title>
-</head>
-<body>
-     <div class="container mt-5">
-        <h2 class="text-center alert alert-primary" role="alert">Gestion des Étudiants du CHC-L</h2>
-        {% block content %} {% endblock content %}
-     </div>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center alert alert-primary" role="alert">
+        Gestion des Étudiants du CHC-L
+      </h2>
+      {% block content %} {% endblock content %}
+    </div>
 
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">
+              Django Student Management System CHC-L
+            </h5>
+            <p>
+              Un système de gestion des étudiants robuste et facile à utiliser,
+              conçu pour le CHC-L.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Liens utiles</h5>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a
+                  href="https://github.com/bendy2509/bendy2509-django_gestion_etudiant.git"
+                  class="text-white"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.djangoproject.com/en/stable/"
+                  class="text-white"
+                  >Documentation Django</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.djangoproject.com/community/"
+                  class="text-white"
+                  >Communauté Django</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Contact</h5>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="mailto:bendyservilus@gmail.com" class="text-white"
+                  >bendyservilus@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white"
+                  >Twitter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-
-
+      <div class="text-center p-3 bg-secondary">
+        © 2024
+        <a class="text-white" href="https://github.com/bendy2509"
+          >Bendy SERVILUS</a
+        >
+      </div>
+    </footer>
 
     <script src="{% static 'student/js/bootstrap.js' %}"></script>
     <script src="{% static 'student/js/popper.js' %}"></script>
     <script src="{% static 'student/js/jquery.js' %}"></script>
-</body>
+  </body>
 </html>
